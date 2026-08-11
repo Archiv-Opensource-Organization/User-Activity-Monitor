@@ -1,0 +1,34 @@
+#include <windows.h>
+
+// 1. 设置程序图标
+// IDI_ICON1 是图标的资源 ID，DISCARDABLE 表示内存不足时可以被丢弃
+IDI_ICON1 ICON DISCARDABLE "main_program.ico"
+
+// 2. 设置版本信息 (VersionInfo)
+1 VERSIONINFO
+FILEVERSION     1, 6, 7, 260810        // 文件版本（在资源管理器中显示）
+PRODUCTVERSION  1, 9, 0, 260810        // 产品版本
+FILEOS          0x40004L          // 操作系统类型 (VOS__WINDOWS32)
+FILETYPE        0x1L              // 文件类型 (VFT_APP)
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "080404b0"          // 0804 代表简体中文，04b0 代表 Unicode
+        {
+            VALUE "CompanyName",      "Archiv Security Team"
+            VALUE "FileDescription",  "Load all components"
+            VALUE "FileVersion",      "1.6.7"
+            VALUE "InternalName",     "UserActivityMonitor"
+            VALUE "LegalCopyright",   "Copyright (C) 2026 Archiv. All rights reserved."
+            VALUE "OriginalFilename", "LIBUserActivityMonitor.exe"
+            VALUE "ProductName",      "Archiv Security Monitoring System"
+            VALUE "ProductVersion",   "v1.6.7.260809_Alpha_Dev_1.9.0 (Build 34)"
+        }
+    }
+
+    // 设置语言标识
+    BLOCK "VarFileInfo"
+    {
+        VALUE "Translation", 0x0804, 1200  // 简体中文, Unicode
+    }
+}

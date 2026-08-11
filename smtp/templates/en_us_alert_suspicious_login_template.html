@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Someone attempts to log into your server account.</title>
+    <style type="text/css">
+        /* HarmonyOS Sans SC Medium */
+        @font-face {
+            font-family: "HarmonyOS Sans SC";
+            src: url("https://cdn.jsdelivr.net/npm/harmonyos-fonts@latest/dist/woff2/HarmonyOS_Sans_SC_Medium.woff2") format("woff2"),
+            url("https://cdn.jsdelivr.net/npm/harmonyos-fonts@latest/dist/woff/HarmonyOS_Sans_SC_Medium.woff") format("woff");
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        /* 新增 Medium Italic 斜体 */
+        @font-face {
+            font-family: "HarmonyOS Sans SC";
+            src: url("https://cdn.jsdelivr.net/npm/harmonyos-fonts@latest/dist/woff2/HarmonyOS_Sans_SC_Medium_Italic.woff2") format("woff2"),
+            url("https://cdn.jsdelivr.net/npm/harmonyos-fonts@latest/dist/woff/HarmonyOS_Sans_SC_Medium_Italic.woff") format("woff");
+            font-weight: 500;
+            font-style: italic;
+            font-display: swap;
+        }
+        /* HarmonyOS Sans SC Black */
+        @font-face {
+            font-family: "HarmonyOS Sans SC";
+            src: url("https://cdn.jsdelivr.net/npm/harmonyos-fonts@latest/dist/woff2/HarmonyOS_Sans_SC_Black.woff2") format("woff2"),
+            url("https://cdn.jsdelivr.net/npm/harmonyos-fonts@latest/dist/woff/HarmonyOS_Sans_SC_Black.woff") format("woff");
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            font-family: "HarmonyOS Sans SC", "Microsoft Yahei", Segoe UI, Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 620px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border: 1px solid #e5e5e5;
+        }
+        .header {
+            background-color: #0078d4;
+            padding: 18px 24px;
+        }
+        .header h2 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 24px;
+            color: #333333;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .info-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0078d4;
+            padding: 16px;
+            margin: 20px 0;
+        }
+        .warn-text {
+            color: #d93025;
+            font-weight: 600;
+        }
+        .footer {
+            padding: 20px 24px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eeeeee;
+            font-size: 12px;
+            color: #666666;
+        }
+        /* footer英文斜体样式，调用 Medium Italic */
+        .footer-en {
+            font-style: italic;
+            font-family: "HarmonyOS Sans SC", "Microsoft Yahei", Segoe UI, Arial, sans-serif;
+            font-weight: 500;
+        }
+        .archiv-wrap {
+            padding:12px 24px 20px 24px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eeeeee;
+            font-size: 0;
+        }
+        .archiv-char {
+            display: inline-block;
+            font-size:24px;
+            font-family: "HarmonyOS Sans SC", "Microsoft Yahei", Segoe UI, Arial, sans-serif;
+            font-weight: 900;
+        }
+        .archiv-space {
+            display: inline-block;
+            width: 8px;
+        }
+        .archiv-brand-char {
+            display: inline-block;
+            font-size:24px;
+            font-family: "HarmonyOS Sans SC", "Microsoft Yahei", Segoe UI, Arial, sans-serif;
+            font-weight: 500;
+            color: #666666;
+        }
+        .archiv-ai { color: #0070C0; }
+        .archiv-ch { color: #C00000; }
+        .archiv-r { color: #FFC000; }
+        .archiv-v { color: #00b050; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>SUSPICIOUS ACCOUNT LOGIN ACTIVITY</h2>
+    </div>
+    <div class="content">
+        <p>Hello，</p>
+        <p>We've detected a <span class="warn-text">suspicious attempt to log into your server account</span>  recently. If this action wasn't done by you or someone in your organization, your server account might be at risk.</p>
+
+        <div class="info-box">
+            <p><strong>DETAILS OF THE LOGIN ATTEMPT：</strong></p>
+            <p>Username：##USERNAME##</p>
+            <p>IP：##IPADDR##</p>
+        </div>
+
+        <p>For security reasons, your account ##USERNAME## has been locked.</p><br>
+        <p>If you haven't logged in recently, please take the following security steps immediately:</p>
+
+        <ul style="padding-left: 20px; margin: 10px 0;">
+            <li>Contact your server admin right away to change your login password and reactivate your account.</li>
+            <li>Check if your password has been leaked.</li>
+        </ul>
+
+        <br><p>If this login was done by you, you can ignore this notification.</p>
+        <p>We recommend you remember your login password to avoid any trouble.</p>
+    </div>
+
+    <div class="footer">
+        <span class="footer-en">This email is an alert generated by the system automatically. Do not reply.</span>
+    </div>
+
+    <div class="archiv-wrap">
+        <span class="archiv-char archiv-ai">A</span><span class="archiv-char archiv-r">r</span><span class="archiv-char archiv-ch">ch</span><span class="archiv-char archiv-ai">i</span><span class="archiv-char archiv-v">v</span>
+        <span class="archiv-space"></span>
+        <span class="archiv-brand-char">Security © 2026</span></br>
+    </div>
+
+</div>
+</body>
+</html>

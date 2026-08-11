@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>有人尝试登录你的账户</title>
+    <style type="text/css">
+        /* HarmonyOS Sans SC Medium */
+        @font-face {
+            font-family: "HarmonyOS Sans SC";
+            src: url("https://cdn.jsdelivr.net/npm/harmonyos-fonts@latest/dist/woff2/HarmonyOS_Sans_SC_Medium.woff2") format("woff2"),
+            url("https://cdn.jsdelivr.net/npm/harmonyos-fonts@latest/dist/woff/HarmonyOS_Sans_SC_Medium.woff") format("woff");
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        /* ✨新增 Medium Italic 斜体 */
+        @font-face {
+            font-family: "HarmonyOS Sans SC";
+            src: url("https://cdn.jsdelivr.net/npm/harmonyos-fonts@latest/dist/woff2/HarmonyOS_Sans_SC_Medium_Italic.woff2") format("woff2"),
+            url("https://cdn.jsdelivr.net/npm/harmonyos-fonts@latest/dist/woff/HarmonyOS_Sans_SC_Medium_Italic.woff") format("woff");
+            font-weight: 500;
+            font-style: italic;
+            font-display: swap;
+        }
+        /* HarmonyOS Sans SC Black */
+        @font-face {
+            font-family: "HarmonyOS Sans SC";
+            src: url("https://cdn.jsdelivr.net/npm/harmonyos-fonts@latest/dist/woff2/HarmonyOS_Sans_SC_Black.woff2") format("woff2"),
+            url("https://cdn.jsdelivr.net/npm/harmonyos-fonts@latest/dist/woff/HarmonyOS_Sans_SC_Black.woff") format("woff");
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            font-family: "HarmonyOS Sans SC", "Microsoft Yahei", Segoe UI, Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 620px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border: 1px solid #e5e5e5;
+        }
+        .header {
+            background-color: #0078d4;
+            padding: 18px 24px;
+        }
+        .header h2 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 24px;
+            color: #333333;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .info-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0078d4;
+            padding: 16px;
+            margin: 20px 0;
+        }
+        .warn-text {
+            color: #d93025;
+            font-weight: 600;
+        }
+        .footer {
+            padding: 20px 24px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eeeeee;
+            font-size: 12px;
+            color: #666666;
+        }
+        /* footer英文斜体样式，调用 Medium Italic */
+        .footer-en {
+            font-style: italic;
+            font-family: "HarmonyOS Sans SC", "Microsoft Yahei", Segoe UI, Arial, sans-serif;
+            font-weight: 500;
+        }
+        .archiv-wrap {
+            padding:12px 24px 20px 24px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eeeeee;
+            font-size: 0;
+        }
+        .archiv-char {
+            display: inline-block;
+            font-size:24px;
+            font-family: "HarmonyOS Sans SC", "Microsoft Yahei", Segoe UI, Arial, sans-serif;
+            font-weight: 900;
+        }
+        .archiv-space {
+            display: inline-block;
+            width: 8px;
+        }
+        .archiv-brand-char {
+            display: inline-block;
+            font-size:24px;
+            font-family: "HarmonyOS Sans SC", "Microsoft Yahei", Segoe UI, Arial, sans-serif;
+            font-weight: 500;
+            color: #666666;
+        }
+        .archiv-ai { color: #0070C0; }
+        .archiv-ch { color: #C00000; }
+        .archiv-r { color: #FFC000; }
+        .archiv-v { color: #00b050; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>异常账户登录活动</h2>
+    </div>
+    <div class="content">
+        <p>你好，</p>
+        <p>我们近期检测到一次 <span class="warn-text">可疑的账户登录尝试</span> 。如果此次操作并非你或者你的组织成员所为，你的服务器账户可能存在安全风险。</p>
+
+        <div class="info-box">
+            <p><strong>可疑登录详情：</strong></p>
+            <p>用户名：##USERNAME##</p>
+            <p>IP：##IPADDR##</p>
+            <p>位置：##GEOLOCATION##</p>
+            <p>（IP属地检测结果仅供参考）</p>
+        </div>
+
+        <p>出于安全考虑，系统已为您锁定账户 ##USERNAME##。</p><br>
+        <p>如果你近期并未进行登录操作，请立即执行以下安全操作：</p>
+
+        <ul style="padding-left: 20px; margin: 10px 0;">
+            <li>立即联系您的服务器管理员修改登录密码，并重新激活账户；</li>
+            <li>检查密码是否泄露。</li>
+        </ul>
+
+        <br><p>如果本次登录为你本人操作，可忽略本通知。</p>
+        <p>我们推荐您牢牢记住您的登录密码，避免造成麻烦。</p>
+    </div>
+
+    <div class="footer">
+        此邮件为系统自动发送的安全警告通知，请勿回复。<br/>
+        <span class="footer-en">This email is an alert generated by the system automatically. Do not reply.</span>
+    </div>
+
+    <div class="archiv-wrap">
+        <span class="archiv-char archiv-ai">A</span><span class="archiv-char archiv-r">r</span><span class="archiv-char archiv-ch">ch</span><span class="archiv-char archiv-ai">i</span><span class="archiv-char archiv-v">v</span>
+        <span class="archiv-space"></span>
+        <span class="archiv-brand-char">Security | 安全监控系统 © 2026</span>
+    </div>
+
+</div>
+</body>
+</html>

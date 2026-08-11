@@ -1,0 +1,14 @@
+//
+// Created by Byakuya on 2026/8/6.
+//
+
+#ifndef LIBUSERACTIVITYMONITOR_ADMIN_RUNTIME_CHECKER_H
+#define LIBUSERACTIVITYMONITOR_ADMIN_RUNTIME_CHECKER_H
+
+bool IsRunAsAdmin();
+
+class AdminRuntimeChecker {
+};
+
+
+#endif //LIBUSERACTIVITYMONITOR_ADMIN_RUNTIME_CHECKER_H

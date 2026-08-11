@@ -1,0 +1,45 @@
+这是废弃的原因。
+
+自从 v1.6.3.260807_Alpha_Dev_1.4.3 (Build 27) 在 ECHO 服务器（代号）完成实装测试后，
+我们（Archiv Security Monitoring System 开发团队）计划对 v1.6.7.260808_Alpha_Dev_1.5.0 (Build 30) 及后续版本中
+SuspiciousLoginAttemptsHandler::ProcessEventXml 的处理逻辑进行调整。
+
+然而，主要开发人员 Byakuya（aka BiliBiliBaiye, DrifterByakuya，他也是 Archiv，Aurarts Studios 的主要开发人员）指出：
+虽然重构 void SuspiciousLoginAttemptsHandler::ProcessEventXml(EVT_HANDLE hEvent) 是个好主意，
+但引入多 IP 地址记录会导致以下巨大的工程量：
+
+1. 必须拆分 string 对象并逐一获取地区信息；
+2. 需要重构 smtp/templates 目录下所有用于发送邮件的 HTML 文件。
+
+考虑到他目前备战高考的实际情况，完成这些工作并不现实。
+Archiv Security 内部团队一致同意了他的看法，因此决定废弃该目录。
+（毕竟人家要高考了 =￣ω￣=）
+
+当然，既然项目已经开源，我们也欢迎社区里的各位开发者接力，帮助完善这一功能。
+
+让我们祝 Byakuya 在 2027 年的高考中取得佳绩！
+也祝愿 Archiv 及其合作伙伴团队的学子们，在 2027 年及未来的高考中金榜题名！
+
+
+This is the reason for abandoning this.
+
+Since v1.6.3.260807_Alpha_Dev_1.4.3 (Build 27) completed practical testing on the ECHO server (tag),
+we (the Archiv Security Monitoring System development team) planned to adjust the processing logic of
+SuspiciousLoginAttemptsHandler::ProcessEventXml in v1.6.7.260808_Alpha_Dev_1.5.0 (Build 30) and later versions.
+
+However, the main developer Byakuya (aka BiliBiliBaiye, DrifterByakuya, who is also a lead developer for Archiv and Aurarts Studios) pointed out:
+although refactoring void SuspiciousLoginAttemptsHandler::ProcessEventXml(EVT_HANDLE hEvent) is a good idea,
+introducing multi-IP address logging would cause a huge amount of work:
+
+- We would have to split the string objects and get regional information one by one;
+- All HTML files used for sending emails in the smtp/templates directory would need to be refactored.
+
+Considering his current preparation for the college entrance exams, completing this work is unrealistic.
+The internal Archiv Security team unanimously agreed with his view, so we decided to abandon this directory.
+(After all, he has exams to focus on =￣ω￣=)
+
+Of course, since the project is already open source,
+we also welcome developers in the community to step in and help improve this feature.
+
+Let’s wish Byakuya great success in the 2027 college entrance exams!
+Also, may the students of Archiv and its partner teams achieve top scores in 2027 and in future exams!
