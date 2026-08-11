@@ -7,6 +7,9 @@
 
 #include <string>
 
+static std::wstring toLower(const std::wstring& s);
+
+bool ruleExists(const std::wstring& ruleName);
 bool blockIPInFirewall(const std::wstring& ipAddress, const std::wstring& ruleName);
 
 class NetFirewallPolicyExecuter {
