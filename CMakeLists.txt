@@ -86,8 +86,8 @@ set(SIGNTOOL_PATH "E:/certs/signtool.exe")
 
 add_custom_command(TARGET LIBUserActivityMonitor POST_BUILD
         COMMAND "${SIGNTOOL_PATH}" sign /v /fd sha256
-        /f "${CMAKE_SOURCE_DIR}/cert/archiv-security.pfx" # 👈 使用新生成的 .pfx 文件
-        /p "131136Ab"                                 # 👈 使用你刚才设置的密码
+        /f "${CMAKE_SOURCE_DIR}/cert/archiv-security.pfx" 
+        /p "????????????"                                 
         /tr http://timestamp.sectigo.com /td sha256
         $<TARGET_FILE:LIBUserActivityMonitor>
         COMMENT "Signing LIBUserActivityMonitor.exe..."
@@ -95,8 +95,8 @@ add_custom_command(TARGET LIBUserActivityMonitor POST_BUILD
 
 add_custom_command(TARGET UserActivator POST_BUILD
         COMMAND "${SIGNTOOL_PATH}" sign /v /fd sha256
-        /f "${CMAKE_SOURCE_DIR}/cert/archiv-security.pfx" # 👈 使用新生成的 .pfx 文件
-        /p "131136Ab"                                 # 👈 使用你刚才设置的密码
+        /f "${CMAKE_SOURCE_DIR}/cert/archiv-security.pfx"
+        /p "????????????"                                 
         /tr http://timestamp.sectigo.com /td sha256
         $<TARGET_FILE:UserActivator>
         COMMENT "Signing UserActivator.exe..."
@@ -104,8 +104,8 @@ add_custom_command(TARGET UserActivator POST_BUILD
 
 add_custom_command(TARGET ArchivElevator POST_BUILD
         COMMAND "${SIGNTOOL_PATH}" sign /v /fd sha256
-        /f "${CMAKE_SOURCE_DIR}/cert/archiv-security.pfx" # 👈 使用新生成的 .pfx 文件
-        /p "131136Ab"                                 # 👈 使用你刚才设置的密码
+        /f "${CMAKE_SOURCE_DIR}/cert/archiv-security.pfx" 
+        /p "????????????"                                 
         /tr http://timestamp.sectigo.com /td sha256
         $<TARGET_FILE:ArchivElevator>
         COMMENT "Signing ArchivElevator.exe..."
