@@ -5,6 +5,9 @@ A lite project in c++ to monitor user activities (in Windows platform only)
 - **Open Source Requirement:** Any developer utilizing the code from this repository MUST release their derivative work as open-source, strictly in accordance with the [LICENSE](./LICENSE) file.
 - **Copyright Notice:** The design copyrights for `elevator.ico` and `main_program.ico` belong exclusively to the **Archiv Team**.
 
+## Third Party Licenses
+This project utilizes **curl**.
+
 ## 🛠️ Build & Configuration Notes
 - **Optional Resource Files:** The `*.rc` and `*.ico` files are not strictly required for development. If you do not need them, simply remove the `{FILENAME}.rc` entries from the `add_executable(...)` section in your `CMakeLists.txt`.
 
