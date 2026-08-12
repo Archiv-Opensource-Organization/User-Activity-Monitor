@@ -106,7 +106,7 @@ void SuspiciousLoginAttemptsHandler::ProcessEventXml(EVT_HANDLE hEvent) {
                             blockedIPExists = true;
                         }
 
-                        if (lockedUserExists || blockedIPExists) {
+                        if (lockedUserExists && blockedIPExists) {
                             log(mainProgram, "SuspiciousLoginAttemptsHandler::ProcessEventXml", "布尔值 lockedUserExists 或者 blockedIPExists 为 true，不对本事件操作。");
 
                             free(pBuffer);
