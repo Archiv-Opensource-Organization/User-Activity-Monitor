@@ -33,7 +33,7 @@ Byakuya (aka Qi-An Chen, 2026/8/12)
 <br>
 <br>
 
-## Donater / Corporator:
-### Corportator
-Nebula (For the all installtation tests on their server envrionment)<br>
+## Donater / Partner:
+### Partner
+Nebula Network (For the all installtation tests on their server envrionment)<br>
 *see also @cyhcyh*
