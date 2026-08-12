@@ -32,7 +32,7 @@ static std::map<std::wstring, std::set<std::wstring>> g_userAttackIps;
 // 记录每个用户名在时间窗口内的失败次数
 static std::map<std::wstring, int> g_loginFailCounter;
 // 记录每个 IP 在时间窗口内的失败次数
-static std::map<std::wstring, int> g_ipCounter;
+// static std::map<std::wstring, int> g_ipCounter;
 
 static std::map<std::wstring, std::vector<std::chrono::steady_clock::time_point>> g_userFailTimestamps;
 static std::map<std::wstring, std::vector<std::chrono::steady_clock::time_point>> g_ipFailTimestamps;
@@ -82,8 +82,33 @@ void SuspiciousLoginAttemptsHandler::ProcessEventXml(EVT_HANDLE hEvent) {
                             return;
                         }
 
+                        bool lockedUserExists = false;
+                        bool blockedIPExists = false;
+
                         // 2. 检查是否已被锁定
                         if (contains(LOCKED_USERS, WStringToString(userName).c_str())) {
+
+                            log(mainProgram, "SuspiciousLoginAttemptsHandler::ProcessEventXml",
+                                "[INFO] Username detected in LOCKED_USERS: %s", WStringToString(userName).c_str());
+
+                            lockedUserExists = true;
+                        }
+
+                        if (contains(BLOCKED_IPS, WStringToString(ipAddress).c_str())) {
+
+                            log(mainProgram, "SuspiciousLoginAttemptsHandler::ProcessEventXml",
+                                "[INFO] Username detected in BLOCKED_IPS: %s", WStringToString(ipAddress).c_str());
+
+                            if (!lockedUserExists) {
+                                add(LOCKED_USERS, WStringToString(userName).c_str()); // 神秘补救
+                            }
+
+                            blockedIPExists = true;
+                        }
+
+                        if (lockedUserExists || blockedIPExists) {
+                            log(mainProgram, "SuspiciousLoginAttemptsHandler::ProcessEventXml", "布尔值 lockedUserExists 或者 blockedIPExists 为 true，不对本事件操作。");
+
                             free(pBuffer);
                             return;
                         }
@@ -123,7 +148,7 @@ void SuspiciousLoginAttemptsHandler::ProcessEventXml(EVT_HANDLE hEvent) {
                                 alertReason.c_str(), WStringToString(userName).c_str());
 
                             // 组装 IP 列表
-                            std::string allIpsStr = "IP List: ";
+                            std::string allIpsStr = "";
                             const auto& ipSet = g_userAttackIps[userName];
                             for (auto it = ipSet.begin(); it != ipSet.end(); ++it) {
                                 allIpsStr += WStringToString(*it);
@@ -135,7 +160,7 @@ void SuspiciousLoginAttemptsHandler::ProcessEventXml(EVT_HANDLE hEvent) {
                                 std::string ipStr = WStringToString(ip);
                                 log(mainProgram, "SuspiciousLoginAttemptsHandler::ProcessEventXml",
                                     "[FIREWALL] 正在封禁恶意 IP: %s", ipStr.c_str());
-                                blockIPInFirewall(ip, L"BLOCK");
+                                blockIPInFirewall(ip, L"Blocked");
                                 if (!contains(BLOCKED_IPS, ipStr.c_str())) {
                                     add(BLOCKED_IPS, ipStr.c_str());
                                 }
