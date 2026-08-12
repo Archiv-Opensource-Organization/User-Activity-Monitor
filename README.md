@@ -1,5 +1,6 @@
 # User Activity Monitor
-A lite project in c++ to monitor user activities (in Windows platform only)
+A lite project in c++ to monitor user activities (in Windows platform only)<br>
+*Origirnal log message were completed in Simplified Chinese*
 
 ## ⚖️ License & Attribution
 - **Open Source Requirement:** Any developer utilizing the code from this repository **MUST** release their derivative work as open-source, strictly in accordance with the [LICENSE](./LICENSE) file.
