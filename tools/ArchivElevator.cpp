@@ -7,7 +7,6 @@
 
 #pragma comment(lib, "shlwapi.lib")
 
-// 使用最标准的 main 入口，彻底告别 WinMain 和 wmain 的烦恼
 int main(int argc, char* argv[]) {
     std::wstring targetPath;
 
