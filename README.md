@@ -28,7 +28,7 @@ We deeply care about the vitality of our community. We believe that an active an
 <br>
 
 ## Developers:
-### Director / Cheif Developer
+### Director / Chief Developer
 Byakuya (aka Qi-An Chen, 2026/8/12)
 <br>
 <br>
