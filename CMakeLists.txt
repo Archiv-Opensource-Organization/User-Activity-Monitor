@@ -143,7 +143,7 @@ target_link_libraries(LIBUserActivityMonitor PRIVATE
 
         taskschd
 
-        # ⚠️ MinGW 静态链接 curl 必须的额外系统库 (防止 undefined reference)
+        # MinGW 静态链接 curl 必须的额外系统库 (防止 undefined reference)
         Normaliz
         wldap32
         bcrypt
@@ -181,7 +181,7 @@ target_compile_definitions(LIBUserActivityMonitor PRIVATE
         NOMINMAX
         _CRT_SECURE_NO_WARNINGS
 
-        CURL_STATICLIB # 👈 这一行至关重要：告诉编译器使用静态模式
+        CURL_STATICLIB # 这一行至关重要：告诉编译器使用静态模式
 )
 
 target_compile_definitions(UserActivator PRIVATE
@@ -191,5 +191,5 @@ target_compile_definitions(UserActivator PRIVATE
         NOMINMAX
         _CRT_SECURE_NO_WARNINGS
 
-        CURL_STATICLIB # 👈 这一行至关重要：告诉编译器使用静态模式
+        CURL_STATICLIB # 这一行至关重要：告诉编译器使用静态模式
 )
