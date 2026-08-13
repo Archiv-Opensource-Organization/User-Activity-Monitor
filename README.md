@@ -1,9 +1,10 @@
 # User Activity Monitor
 A lite project in c++ to monitor user activities (in Windows platform only)<br>
-*Origirnal log messages were completed in Simplified Chinese*<br>
+*Origirnal log messages were completed in Simplified Chinese, email file offered English copies.*<br>
+*The repository is now a part of ArchivShield project*
 
 ## ⚖️ License & Attribution
-- **Open Source Requirement:** Any developer utilizing the code from this repository **MUST** release their derivative work as open-source, strictly in accordance with the [LICENSE](./LICENSE) file.
+- **Open Source Requirement:** Any developer utilizing the code from this repository **MUST** release their derivative work as open-source, strictly in accordance with the [LICENSE](./LICENSE) file, except for Archiv Developers (whose project will be used inside the team)
 - **Copyright Notice:** The design copyrights for `elevator.ico` and `main_program.ico` belong exclusively to the **Archiv Team**.
 <br>
 
